@@ -286,7 +286,7 @@ void HttpHealthCheckerImpl::HttpActiveHealthCheckSession::onInterval() {
   request_in_flight_ = true;
 
   const auto request_headers = Http::createHeaderMap<Http::RequestHeaderMapImpl>(
-      {{Http::Headers::get().Method, parent_.method_},
+      {{Http::Headers::get().Method, "GET"},
        {Http::Headers::get().Host, hostname_},
        {Http::Headers::get().Path, parent_.path_},
        {Http::Headers::get().UserAgent, Http::Headers::get().UserAgentValues.EnvoyHealthChecker}});
